@@ -62,8 +62,8 @@ func checkCol(col, num int) bool {
 }
 
 func checkSubgrid(row, col, num int) bool{
-	for curRow := int(row/3) * 3; curRow - row < 3; curRow++{
-		for curCol := int(col/3) * 3; curCol - col < 3; curCol++{
+	for curRow := int(row/3) * 3; curRow - int(row/3)*3 < 3; curRow++{
+		for curCol := int(col/3) * 3; curCol - int(col/3)*3 < 3; curCol++{
 			if board[curRow * 9 + curCol]== num{
 				return false			
 			}
@@ -108,6 +108,7 @@ func main(){
 
 	fmt.Println("Here is the initial board:\n\n")
 	printBoard()
+	checkSubgrid(8,8,8)
 	solved := solve(0,0)
 	if solved{
 		fmt.Println("\nSolved!\n")
