@@ -4,6 +4,7 @@ package main
 import (
   "fmt"
   "io/ioutil"
+  "time"
 
 )
 
@@ -13,7 +14,7 @@ var board [81] int
 
 func readFile() {
 
-	byteStr, err := ioutil.ReadFile("/home/beepboop/Dev/sudoku/sudoku.txt") 
+	byteStr, err := ioutil.ReadFile("C:\\Users\\Elena\\OneDrive\\Documents\\AAAVanderbilt\\Fall2016\\ProgrammingLanguages\\Project4\\src\\github.com\\raffayec\\sudoku.txt") 
 	if err != nil {
         	fmt.Println(err)
 	}
@@ -108,11 +109,15 @@ func main(){
 
 	fmt.Println("Here is the initial board:\n\n")
 	printBoard()
-	checkSubgrid(8,8,8)
+	
+	start := time.Now()
 	solved := solve(0,0)
+	elapsed :=time.Since(start)	
+
 	if solved{
-		fmt.Println("\nSolved!\n")
+		fmt.Println("\nSolved!\n\n")
 		printBoard()
+		fmt.Println("\n The solver took %s", elapsed)
 	} else{
 		fmt.Println("\nCould not be solved!")
 	}
