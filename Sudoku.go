@@ -1,3 +1,7 @@
+//Mark Karle, Elena Raffay
+//karlema, raffaec
+//mark.a.karle@vanderbilt.edu elena.c.raffay@vanderbilt.edu
+//This program reads in an input sudoku and tries to solve it
 //Honor statement:  We pledge on our honor we had no unauthorized aid on this assignment.
 package main
 
